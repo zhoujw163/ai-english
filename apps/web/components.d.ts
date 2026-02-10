@@ -23,6 +23,7 @@ declare module 'vue' {
     ElTag: typeof import('element-plus/es')['ElTag']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/components/Search/index.vue')['default']
   }
 }
 
@@ -39,4 +40,5 @@ declare global {
   const ElTag: typeof import('element-plus/es')['ElTag']
   const RouterLink: typeof import('vue-router')['RouterLink']
   const RouterView: typeof import('vue-router')['RouterView']
+  const Search: typeof import('./src/components/Search/index.vue')['default']
 }
