@@ -1,6 +1,6 @@
 import { Controller, Post, Body } from '@nestjs/common';
 import { UserService } from './user.service';
-import type { UserLogin, UserRegister } from '@en/common/user';
+import type { Token, UserLogin, UserRegister } from '@en/common/user';
 
 @Controller('user')
 export class UserController {
@@ -16,5 +16,11 @@ export class UserController {
   @Post('register')
   register(@Body() registerDto: UserRegister) {
     return this.userService.register(registerDto);
+  }
+
+  //刷新token 只需要一个参数 refreshToken
+  @Post('refresh-token')
+  refreshToken(@Body() createUserDto: Omit<Token, 'accessToken'>) {
+    return this.userService.refreshToken(createUserDto);
   }
 }

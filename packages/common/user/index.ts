@@ -28,3 +28,8 @@ export type Token = {
 export type WebResultUser = ResultUser & {
     token: Token
 }
+
+//token的载荷
+export type TokenPayload = Pick<User, 'name' | 'email'> & { userId: User['id'] }
+//刷新token的载荷
+export type RefreshTokenPayload = TokenPayload & { tokenType: 'refresh' | 'access' }
